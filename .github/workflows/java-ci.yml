@@ -21,8 +21,8 @@ jobs:
           java-package: jdk
 
       - name: Download JavaFX SDK
-        run: |
-          wget https://gluonhq.com/download/javafx-17-sdk-linux/ -O javafx-sdk.zip
+        run: |          
+          wget https://download2.gluonhq.com/openjfx/21.0.1/openjfx-21.0.1_linux-x64_bin-sdk.zip -O javafx-sdk.zip
           unzip javafx-sdk.zip -d javafx-sdk
           echo "JAVA_FX_HOME=$GITHUB_WORKSPACE/javafx-sdk" >> $GITHUB_ENV
 
