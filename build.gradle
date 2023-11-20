@@ -24,7 +24,7 @@ shadowJar {
 jar {
   manifest {
     attributes(
-            'Main-Class': 'com.mso.ph.programhelper.App'
+            'Main-Class': 'com.mso.ph.programhelper.AppLauncher'
     )
   }
 }
@@ -41,7 +41,7 @@ tasks.withType(JavaCompile) {
 
 application {
   mainModule = 'com.mso.ph.programhelper'
-  mainClass = 'com.mso.ph.programhelper.App'
+  mainClass = 'com.mso.ph.programhelper.AppLauncher'
 }
 
 javafx {
