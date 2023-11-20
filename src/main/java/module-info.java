@@ -10,7 +10,10 @@ module com.mso.ph.programhelper {
     requires org.kordamp.bootstrapfx.core;
     //requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires com.google.gson;
+    requires annotations;
 
     opens com.mso.ph.programhelper to javafx.fxml;
+    opens com.mso.ph.programhelper.settings.model to com.google.gson;
     exports com.mso.ph.programhelper;
 }
