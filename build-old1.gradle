@@ -21,13 +21,30 @@ shadowJar {
   mergeServiceFiles()
 }
 
-jar {
+//jar {
+//  manifest {
+//    attributes(
+//            'Main-Class': 'com.mso.ph.programhelper.App'
+//    )
+//  }
+////  from {
+////    configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+////  }
+//  from {
+//    configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+//  }
+//}
+
+task customFatJar(type: Jar) {
   manifest {
-    attributes(
-            'Main-Class': 'com.mso.ph.programhelper.App'
-    )
+    attributes 'Main-Class': 'om.mso.ph.programhelper.App'
   }
+  archiveBaseName = 'all-in-one-jar'
+  duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+  from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+  with jar
 }
+
 ext {
   junitVersion = '5.9.2'
 }
