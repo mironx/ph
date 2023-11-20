@@ -1,4 +1,4 @@
-package com.mso.ph.programhelper.settings.model;
+package com.mso.ph.programhelper.data.model.settings;
 
 public class DataSettings {
     private String dataFolderPath;

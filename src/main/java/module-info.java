@@ -14,6 +14,8 @@ module com.mso.ph.programhelper {
     requires annotations;
 
     opens com.mso.ph.programhelper to javafx.fxml;
-    opens com.mso.ph.programhelper.settings.model to com.google.gson;
+    opens com.mso.ph.programhelper.data.model.settings to com.google.gson;
+    exports com.mso.ph.programhelper.data.model.person;
+    exports com.mso.ph.programhelper.data.model.settings;
     exports com.mso.ph.programhelper;
 }
