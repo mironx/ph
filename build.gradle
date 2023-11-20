@@ -4,6 +4,7 @@ plugins {
   id 'org.javamodularity.moduleplugin' version '1.8.12'
   id 'org.openjfx.javafxplugin' version '0.0.13'
   id 'org.beryx.jlink' version '2.25.0'
+  id 'com.github.johnrengelman.shadow' version '7.1.0'
 }
 
 group 'com.mso.ph'
@@ -13,6 +14,20 @@ repositories {
   mavenCentral()
 }
 
+shadowJar {
+  archiveBaseName.set('program-helper')
+  archiveVersion.set(version + "fat")
+  archiveClassifier.set('')
+  mergeServiceFiles()
+}
+
+jar {
+  manifest {
+    attributes(
+            'Main-Class': 'com.mso.ph.programhelper.App'
+    )
+  }
+}
 ext {
   junitVersion = '5.9.2'
 }
